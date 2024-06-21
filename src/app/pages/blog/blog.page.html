@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <img src="{{logo}}" slot="start" width="90" routerDirection="root" [routerLink]="[home_link]" />
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar color="light" placeholder="Search this website" show-clear-button="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <!-- <ion-card class="banner" style = "--background: url('{{p.banner}}') 0 0/100% 100% no-repeat;background-size: cover;">
+    <div class="card-overlay"></div>
+    <ion-card-header>
+      <ion-card-subtitle>{{p.category}}</ion-card-subtitle>
+      <ion-card-title>{{p.title}}</ion-card-title>
+    </ion-card-header>
+  </ion-card> -->
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="3"><img src="{{image1}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image2}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image3}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image4}}" height="45" /></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card routerDirection="root" [routerLink]="[p.post_id]" *ngFor="let p of item_list; index as i; first as isFirst">
+    <img alt="{{p.title}}" src="{{p.image}}" />
+    <div class="card-overlay"></div>
+    <ion-card-header>
+      <ion-card-subtitle>{{p.meta}}</ion-card-subtitle>
+      <ion-card-title [innerHTML]="p.title"></ion-card-title>
+    </ion-card-header> 
+    <ion-card-content *ngIf="isFirst">
+      {{p.excerpt}}
+    </ion-card-content>  
+  </ion-card>
+
+  <ion-card class="ion-no-padding" *ngIf="isLoad">
+    <ion-list>
+      <ion-thumbnail style="width: 100%; height: 10rem;margin-bottom: 10px;">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 2rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 1rem;"></ion-skeleton-text>            
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-card class="ion-no-padding" *ngIf="isLoad">
+    <ion-list>
+      <ion-thumbnail style="width: 100%; height: 10rem;margin-bottom: 10px;">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 2rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 1rem;"></ion-skeleton-text>            
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+    <ion-infinite-scroll-content loadingText="Please wait..." loadingSpinner="bubbles"></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+  
+
+</ion-content>
+
+<!-- <ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="home">
+      <ion-icon name="play-circle"></ion-icon>
+      Listen Now
+    </ion-tab-button>
+    <ion-tab-button tab="radio">
+      <ion-icon name="radio"></ion-icon>
+      Radio
+    </ion-tab-button>
+    <ion-tab-button tab="library">
+      <ion-icon name="library"></ion-icon>
+      Library
+    </ion-tab-button>
+    <ion-tab-button tab="search">
+      <ion-icon name="search"></ion-icon>
+      Search
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs> -->

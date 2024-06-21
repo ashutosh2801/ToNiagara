@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <img src="{{logo}}" slot="start" width="90" routerDirection="root" [routerLink]="[home_link]" />
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar color="light" placeholder="Search this website" show-clear-button="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+  <!-- <ion-card class="banner" style = "--background: url('{{p.banner}}') 0 0/100% 100% no-repeat;background-size: cover;">
+    <div class="card-overlay"></div>
+    <ion-card-header>
+      <ion-card-subtitle>{{p.category}}</ion-card-subtitle>
+      <ion-card-title>{{p.title}}</ion-card-title>
+    </ion-card-header>
+  </ion-card> -->
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="3"><img src="{{image1}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image2}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image3}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image4}}" height="45" /></ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-breadcrumbs [maxItems]="maxBreadcrumbs" (ionCollapsedClick)="expandBreadcrumbs()">
+    <ion-breadcrumb href="/home">Home</ion-breadcrumb>
+    <ion-breadcrumb href="/blog">Blog</ion-breadcrumb>
+    <ion-breadcrumb href="/destinations">Destinations</ion-breadcrumb>
+    <ion-breadcrumb href="/canada">Canada</ion-breadcrumb>
+    <ion-breadcrumb href="/ontario">Ontario</ion-breadcrumb>
+    <ion-breadcrumb href="/niagara-falls">Niagara Falls</ion-breadcrumb>
+  </ion-breadcrumbs>
+
+  <ion-card class="ion-no-padding" *ngIf="isLoad">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 2rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 1rem;"></ion-skeleton-text>            
+      </ion-item>
+      <ion-thumbnail style="width: 100%; height: 10rem;margin-bottom: 10px;">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 3rem;"></ion-skeleton-text>            
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card class="ion-no-margin">
+    <ion-card-header>
+      <!-- <ion-card-subtitle>{{p.meta}}</ion-card-subtitle> -->
+      <ion-card-title [innerHTML]="sanitizer.bypassSecurityTrustHtml(p.post_title)"></ion-card-title>
+    </ion-card-header> 
+    <!-- <img *ngIf="p.image" alt="{{p.post_title}}" src="{{p.image}}" /> -->
+    <ion-card-content>
+      <div [innerHTML]="sanitizer.bypassSecurityTrustHtml(p.post_content)"></div>
+    </ion-card-content>  
+  </ion-card>
+</ion-content>

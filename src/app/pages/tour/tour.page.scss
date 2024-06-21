@@ -1,0 +1,29 @@
+@font-face { font-family: "Ionicons"; src: url("https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1"); src: url("https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.woff?v=2.0.1") format("woff"), url("https://code.ionicframework.com/ionicons/2.0.1/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg"); font-weight: normal; font-style: normal; }
+
+ion-searchbar{padding-top: 5px;padding-bottom: 5px;min-height: auto;}
+ion-label strong {display: block;  max-width: calc(100% - 60px);  overflow: hidden;  text-overflow: ellipsis;}
+ion-label ion-note {font-size: 0.9rem;}
+ion-thumbnail {--size: 48%;--border-radius: 14px;margin: 0px 3px 0px 3px;display:inline-block;}.banner {min-height: 250px;position: relative;border-radius: 0;margin: 0px 0px 15px 0px;}
+ion-footer {margin: 0 0 0 0}
+ion-accordion { margin-bottom: 5px;}
+td, th {
+    padding: 0 2px;
+    line-height: 24px;
+}
+.banner .card-overlay{position: absolute;height: 100%;width: 100%;background-color: #0000007c;z-index: 99;}
+.banner ion-card-header{position: absolute;top: 5%;left: 0;right: 0;z-index: 100;text-align: center;}
+.banner ion-card-content{position: absolute;top: 48%;left: 0;right: 0;z-index: 100;text-align: center;color:#fff;}
+.banner ion-card-subtitle{display: inline-block;color: #fff;padding: 4px;}
+.banner ion-card-title{font-size: 23px;color: #fff;}
+.price {font-size: 25px;font-weight: 800;}
+.heading-2 {padding-left: 15px;font-size: 19px;color: #03923c;}
+.icons ion-icon { font-size: 25px; margin-top: 10px;}
+.icons ion-card-title { font-size: 14px; font-weight: 600;}
+.icons ion-card-subtitle { font-size: 12px; font-weight: 500;}
+.height30 {height: 25px;}
+.address-time {color: #000369;font-size: 13px;font-weight: 500;margin-top: 10px;}
+.address-time span {margin-right: 15px;}
+.inclusion, .description, .exclusion {padding-top: 0;padding-bottom: 5px;}
+.ion-text-time {margin: 5px 0;display: block;}
+.unread-indicator {background: var(--ion-color-primary);  width: 30px;height: 30px;line-height: 30px;color: #fff;  border-radius: 100%;  position: absolute;  inset-inline-start: 0;top: 10px;text-align: center;font-weight: 700;}
+.metadata-end-wrapper {position: absolute;  top: 10px;inset-inline-end: 10px;  font-size: 0.8rem;  display: flex;align-items: center;}

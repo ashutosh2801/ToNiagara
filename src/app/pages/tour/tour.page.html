@@ -1,0 +1,308 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <img src="{{logo}}" slot="start" width="90" routerDirection="root" [routerLink]="[home_link]" />
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar color="light" placeholder="Light" show-clear-button="focus" placeholder="Search Tours"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card class="ion-no-padding ion-no-margin" *ngIf="!isLoad">
+    <ion-list>
+      <ion-thumbnail style="width: 100%; height: 12rem;margin-bottom: 10px;">
+        <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+      </ion-thumbnail>
+      <ion-item lines="none" style="position: absolute;top: 12%;left: 0;right: 0;margin: 0 10px;">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 1.5rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 1.5rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 1.5rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 1.5rem; margin: 0 2%;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 2rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 2rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 2rem; margin: 0 2%;"></ion-skeleton-text>
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 20%; height: 2rem; margin: 0 2%;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 80%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 90%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+      <ion-item lines="none" class="height30">
+        <ion-skeleton-text expand="block" [animated]="true" style="width: 100%; height: 1rem;"></ion-skeleton-text>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad" class="banner" style = "--background: url('{{p.banner_image}}') 0 0/100% 100% no-repeat;background-size: cover;">
+    <div class="card-overlay"></div>
+    <ion-card-header>
+      <ion-card-title>{{p.detail.title}}</ion-card-title>
+      <ion-card-subtitle>{{p.detail.sub_title}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div><ion-text color="warning"><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon></ion-text></div>
+      <!-- <div><ion-text color="light">Offer Ends: 17h 20m 30s</ion-text></div> -->
+      <div class="banner-price"><ion-text color="light" class="price" [innerHtml]="p.price"></ion-text></div>
+      <div><ion-text color="light"><ion-icon name="time-outline"></ion-icon> Duration: <strong>{{p.detail.duration}}</strong></ion-text></div>
+      <ion-button routerDirection="root"  [routerLink]="[p.book_btn]" color="success" size="small" shape="round"><ion-icon slot="start" name="left-arrow"></ion-icon> Book Now</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col class="ion-text-center" size="3"><img src="{{image1}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image2}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image3}}" width="50" /></ion-col>
+      <ion-col class="ion-text-center" size="3"><img src="{{image4}}" height="45" /></ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+  <ion-grid *ngIf="isLoad" class="icons" fixed>
+    <ion-row>
+      <ion-col *ngIf="p.location" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="map-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.location}}</ion-card-title>
+            <ion-card-subtitle>Location</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.no_reviews" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon aria-hidden="true" name="chatbox-ellipses-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.no_reviews}}</ion-card-title>
+            <ion-card-subtitle>Reviews</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.duration" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="time-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.duration}}</ion-card-title>
+            <ion-card-subtitle>Duration</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.price" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="person-outline"></ion-icon>
+          <ion-card-header class="adult-price">
+            <ion-card-title [innerHtml]="p.price"></ion-card-title>
+            <ion-card-subtitle>Adult (13+)</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.seniors_price" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="accessibility-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.seniors_price}}</ion-card-title>
+            <ion-card-subtitle>Senior</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.children_price" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="accessibility-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.children_price}}</ion-card-title>
+            <ion-card-subtitle>Child (3-12)</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col *ngIf="p.infants_price" class="ion-text-center" size="6">
+        <ion-card color="light" class="ion-no-margin">
+          <ion-icon name="body-outline"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>{{p.infants_price}}</ion-card-title>
+            <ion-card-subtitle>Infant (2 and under)</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngIf="isLoad && p.inclusion">
+    <h2 class="heading-2">Tour Inclusions</h2>
+    <ion-card-content class="inclusion" [innerHtml]="p.inclusion"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad">
+    <h2 class="heading-2">Tour Description</h2>
+    <ion-card-content class="description" [innerHtml]="p.description"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.itinerary">
+    <h2 class="heading-2">Tour Itinerary</h2>
+    <ion-accordion-group [multiple]="true" [value]="['first_0']">
+      <ion-accordion value="{{'first_'+i}}" *ngFor="let d of p.itinerary; index as i">
+        <ion-item slot="header" color="light">
+          <ion-badge slot="start"><span color="warning">0{{i+1}}</span></ion-badge>
+          <ion-label>{{d.title}}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <div *ngIf="d.description" class="description" [innerHtml]="d.description"></div>
+          <div class="address-time"><span *ngIf="d.address"><ion-icon name="map-outline"></ion-icon> {{d.address}}</span> <span *ngIf="d.datetime"><ion-icon name="time-outline"></ion-icon> {{d.datetime}}</span></div>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.pickup">
+    <h2 class="heading-2">Pickup Information</h2>
+    <ion-card-content class="description" [innerHtml]="p.pickup"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.policy">
+    <h2 class="heading-2">Cancellation & Refund Policy</h2>
+    <ion-card-content class="description" [innerHtml]="p.policy"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.faq">
+    <h2 class="heading-2">Frequently Asked Questions</h2>
+    <ion-accordion-group [value]="['faq_0']">
+      <ion-accordion value="{{'faq_'+i}}" *ngFor="let d of p.faq; index as i">
+        <ion-item slot="header" color="light">
+          <ion-label>{{d.question}}</ion-label>
+        </ion-item>
+        <div class="ion-padding" slot="content">
+          <div *ngIf="d.answer" class="description" [innerHtml]="d.answer"></div>
+        </div>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.other_description">
+    <h2 class="heading-2">Other Information</h2>
+    <ion-card-content class="description" [innerHtml]="p.other_description"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoad && p.exclusion">
+    <h2 class="heading-2">Tour Exclusions</h2>
+    <ion-card-content class="exclusion" [innerHtml]="p.exclusion"></ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="isLoadG">    
+    <ion-card-header>
+      <ion-card-title id="gallery">Gallery</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-no-padding" *ngFor="let gly of gallery">
+        <ion-thumbnail  *ngFor="let g of gly; index as i">
+          <a *ngIf="g.type === 'Video'; elsetype" target="_blank" href="https://www.youtube.com/embed/{{g.image_name}}?rel=0&autoplay=0"><img alt="{{g.image_name}}" src="https://img.youtube.com/vi/{{g.image_name}}/0.jpg" /></a>
+
+          <ng-template #elsetype>
+            <a target="_blank" href="https://www.toniagara.com/uploads/tours/{{g.image_name}}"><img alt="{{g.image_name}}" src="https://www.toniagara.com/uploads/tours/thumb/{{g.image_name}}" /></a>
+          </ng-template>
+          <!-- <ion-img-viewer
+  title="{{g}}"
+  text="{{g}}"
+  scheme="dark"
+  src="https://www.toniagara.com/uploads/tours/{{g}}"
+>
+</ion-img-viewer> -->
+        </ion-thumbnail>        
+    </ion-card-content>
+    <ion-infinite-scroll *ngIf="isInfiniteG" (ionInfinite)="onIonInfiniteGallery($event, p.detail.ID)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <!-- <ion-button loadingText="Please wait..." loadingSpinner="bubbles" fill="clear" expand="block" (click)="scrollToTop()"><ion-icon color="primary" name="arrow-up-circle-outline" size="large" aria-hidden="true"></ion-icon></ion-button> -->
+  </ion-card>
+
+  <ion-button fill="clear" expand="block" (click)="scrollToTop()"><ion-icon color="primary" name="arrow-up-circle-outline" size="large" aria-hidden="true"></ion-icon></ion-button>
+
+  <ion-card *ngIf="isLoadR">
+    <ion-card-header>
+      <ion-card-title id="reviews">Reviews</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="ion-no-padding">
+      <ion-list [inset]="true" *ngFor="let rvs of reviews">
+        <ion-item [button]="true" detail="false" *ngFor="let r of rvs; index as i">
+          <div class="unread-indicator-wrapper" slot="start">
+            <div class="unread-indicator">{{r.short_name}}</div>
+          </div>
+          <ion-label>
+            <strong>{{r.full_name}}</strong>
+            <ion-text color="medium" class="ion-text-time">{{r.created_on}}</ion-text>
+            <ion-note color="medium" class="ion-text-wrap">{{r.description}}</ion-note>
+          </ion-label>
+          <div class="metadata-end-wrapper" slot="end">
+            <ion-note color="warning"> 
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </ion-note>
+          </div>
+        </ion-item>
+      </ion-list>
+      <ion-infinite-scroll *ngIf="isInfiniteR" (ionInfinite)="onIonInfiniteReviews($event, p.detail.ID)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-card-content>
+    <ion-button loadingText="Please wait..." loadingSpinner="bubbles" fill="clear" expand="block" (click)="scrollToTop()"><ion-icon color="primary" name="arrow-up-circle-outline" size="large" aria-hidden="true"></ion-icon></ion-button>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer class="ion-no-margin ion-no-padding">
+  <ion-toolbar class="ion-no-margin ion-no-padding">
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button>
+          <ion-icon name="logo-usd"></ion-icon>
+          Book Now 
+        </ion-tab-button>
+        <ion-tab-button *ngIf="p.no_reviews" (click)="handleReview( p.detail.ID )">
+          <ion-icon name="chatbox-ellipses-outline"></ion-icon>
+          Review
+        </ion-tab-button>
+        <ion-tab-button (click)="handleGallery( p.detail.ID )">
+          <ion-icon name="images-outline"></ion-icon>
+          Gallery
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>  
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+  "name": "ToNiagara",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons> 
+    <img src="{{logo}}" slot="start" width="90" routerDirection="root" [routerLink]="[home_link]" />
+  </ion-toolbar>
+  <ion-toolbar color="light">
+    <ion-searchbar color="light" placeholder="Search this website" show-clear-button="focus"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-box" [fullscreen]="true">
+  <form (ngSubmit)="do_contact(registerData.value)" [formGroup]="registerData">
+    <ion-row>
+      <ion-col>
+          <ion-list>
+          
+            <section class="login_wra">
+              <h2>Contact Us</h2>
+            </section>
+            <p><b>We are always here to help you</b></p>
+            <p>Please feel free to email/call us with any questions, a ToNiagara representative will be happy to assist you!</p>
+          
+          <ion-item >
+            <ion-input label="Full name" label-placement="floating" type="text" placeholder="Full name" name="name" formControlName="name" (ionBlur)="logValidationErrors()"></ion-input>
+          </ion-item>
+          <div class="validation-errors" *ngIf="formErrors.name">{{formErrors.name}}</div>
+          
+          <ion-item >
+            <ion-input label="Email Address" label-placement="floating" type="email" placeholder="Email Address" name="email" formControlName="email" (ionBlur)="logValidationErrors()"></ion-input>
+          </ion-item>
+          <div class="validation-errors" *ngIf="formErrors.email">{{formErrors.email}}</div>
+          
+          <ion-item >
+            <ion-input label="Phone number" label-placement="floating" type="tel" placeholder="Phone number" name="phone" placeholder="+1 (xxx)-xxx-xxxx" formControlName="phone" (ionBlur)="logValidationErrors()" minlength="17" maxlength="17" [maskito]="phoneMask" [maskitoElement]="maskPredicate"></ion-input>
+          </ion-item>
+          <div class="validation-errors" *ngIf="formErrors.phone">{{formErrors.phone}}</div>
+          
+          <ion-item text-wrap  >
+            <ion-textarea label="Write message here:" labelPlacement="floating" placeholder="Write message here:" name="message" formControlName="message" (ionBlur)="logValidationErrors()"></ion-textarea>
+          </ion-item>
+          <div class="validation-errors" *ngIf="formErrors.message">{{formErrors.message}}</div>
+  
+          <div class="ion-padding">
+            <ion-button class="submit-btn" expand="block" type="submit" [disabled]="!registerData.valid">Submit</ion-button>
+          </div>
+          
+        </ion-list>
+      </ion-col>
+    </ion-row>      
+  </form>
+  
+  <ion-card color="dark">
+  <ion-card-content>
+  <div class="address_right">
+    <h3>Mailing Address</h3> 
+    <p class="address2"><i class="fa fa-building-o"></i> 5 Brisdale Dr, Suite 208 Brampton, ON L7A 0S9, Canada</p>
+    
+    <h3>Phone Number</h3>
+    <p> <a href="tel:+1 800-653-2242" target="_blank" style="color:#fff;text-decoration:none;">+1 800-653-2242</a></p>
+    
+    <h3>WhatsApp Number</h3>
+    <p><a href="https://wa.me/18006532242" target="_blank" style="color:#fff;text-decoration:none;">+1 800-653-2242</a></p>
+    
+    <h3>Email Address</h3>
+    <p><a href="mailto:info@toniagara.com" target="_blank" style="color:#fff;text-decoration:none;">info&#64;toniagara.com</a></p>
+    
+    <h3>Get Support Services</h3>
+    <p><a href="https://www.toniagara.com/contact-us" target="_blank" style="color:#fff;text-decoration:none;">https://www.toniagara.com/contact-us</a></p>    
+    
+  </div>
+</ion-card-content>
+</ion-card>
+</ion-content>

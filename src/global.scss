@@ -1,0 +1,54 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+ion-toolbar {background-color: var(--ion-color-light-contrast);color: var(--ion-color-dark-contrast);}
+ion-toolbar ion-menu-button {color: var(--ion-color-light-contrast) !important;background-color: var(--ion-color-danger-contrast) !important;}
+ion-toolbar ion-title {color: var(--ion-color-danger-contrast);opacity: 1 !important;}
+ion-menu ion-item {border-bottom: 1px solid #ccc !important;}
+ion-content {background-color: #fff;}
+ul, ul li, 
+ion-card ion-card-content ul, 
+ion-card ion-card-content ul li { padding: 0; list-style: none; }
+ion-card ion-card-content ul li { font-size: 15px; margin-bottom: 5px;}
+.inclusion ul li::before {  font-family: "Ionicons"; padding-right: 10px; width: 25px; height: 25px; content: "\f359"; color: #03923c;}
+.exclusion ul li::before {  font-family: "Ionicons"; padding-right: 10px; width: 25px; height: 25px; content: "\f128"; color: #ff0000;}
+.description ul li::before { font-family: "Ionicons"; padding-right: 10px; width: 25px; height: 25px; content: "\f120"; color: #000000;}
+.heading4 {font-size: 15px;color: #333;font-weight: 600;margin: 10px 0;}
+.old_price {color: #f00;text-decoration: line-through;font-size: 20px;margin-right: 5px;}
+.badge {color: #4CAF50;background: #d7fad8;font-size: 15px;padding: 2px 5px;border-radius: 15px;}
+.price {font-size: 25px;font-weight: 800;display: block;}
+
+.adult-price .old_price {color: #f00;text-decoration: line-through;font-size: 14px;margin-right:2px;}
+.adult-price .badge {color: #4CAF50;background: #d7fad8;font-size: 14px;padding: 2px 2px;border-radius: 15px;display: none;}
+.adult-price .price {font-size: 14px;font-weight: 600;display: block;}
+
+.banner-price .old_price {color: #f00;text-decoration: line-through;font-size: 20px;margin-right: 5px;}
+.banner-price .badge {color: #4CAF50;background: #d7fad8;font-size: 15px;padding: 2px 5px;border-radius: 15px;}
+.banner-price .price {font-size: 25px;font-weight: 800;display: block;}
+
+ion-footer{box-shadow:none;-webkit-box-shadow:none}
